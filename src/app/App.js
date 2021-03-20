@@ -68,7 +68,7 @@ function App() {
   // 정상적으로 요청이 처리되어 응답이 온 경우 렌더링
   return (
     <div className={styles['App']}>
-      <h1 className={styles['h1']}>MY영화관</h1>
+      <h1 className={styles['h1']}><a href="/">MY영화관</a></h1>
       <div className={styles['searchContainer']}>
         <div className="search-form">
         {/* <form> */}

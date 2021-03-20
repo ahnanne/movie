@@ -2,6 +2,7 @@ $brown: #815854;
 $beige: #F9EBDE;
 $brownShadow: #8158544f;
 $brownOpacity: #815854b4;
+$pinkBeige: #eba3b5;
 
 .App {
   min-width: 470px;
@@ -13,10 +14,19 @@ $brownOpacity: #815854b4;
   text-align: center;
   font-style: italic;
   line-height: 2;
-  color: $beige;
   background-color: $brown;
   padding: 0;
   margin: 0;
+
+  a {
+    text-decoration: none;
+    color: $beige;
+    transition: color 500ms linear;
+  }
+
+  a:hover {
+    color: $pinkBeige;
+  }
 }
 
 .searchContainer {
@@ -42,7 +52,7 @@ $brownOpacity: #815854b4;
   font-size: 1.4em;
   color: $brown;
   text-shadow: 2px 2px 4px $brownShadow;
-  letter-spacing: -1px;
+  letter-spacing: 3px;
 }
 
 .searchBtn {

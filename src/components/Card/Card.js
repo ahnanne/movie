@@ -25,9 +25,10 @@ export default function Card({ data }) {
     );
   } else {
     return (
-      <div className="noData">
-        검색 결과가 없습니다..ㅠ
-      </div>
+      <figure className={styles['noData']}>
+        <img src="assets/nodata.png" alt="검색 결과 없음" />
+        <figcaption>검색 결과가 없습니다..ㅠ</figcaption>
+      </figure>
     )
   }
 }

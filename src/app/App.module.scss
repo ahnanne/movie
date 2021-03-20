@@ -1,45 +1,7 @@
-// .App {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// }
-
-// .App-logo {
-//   pointer-events: none;
-//   height: 30vmin;
-
-//   @media (prefers-reduced-motion: no-preference) {
-//     animation: App-logo-spin infinite 20s linear;
-//   }
-// }
-
-// .App-header {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   width: 100vw;
-//   min-height: 100vh;
-//   font-size: calc(10px + 1vmin);
-//   background-color: #282c34;
-//   color: white;
-// }
-
-// .App-link {
-//   text-decoration: none;
-//   color: #61dafb;
-// }
-
-// @keyframes App-logo-spin {
-//   from {
-//     transform: rotate(0deg);
-//   }
-//   to {
-//     transform: rotate(360deg);
-//   }
-// }
-
-/* -------------------------------------------------------------------------- */
+$brown: #815854;
+$beige: #F9EBDE;
+$brownShadow: #8158544f;
+$brownOpacity: #815854b4;
 
 .h1 {
   font-size: 2.4em;
@@ -47,8 +9,8 @@
   text-align: center;
   font-style: italic;
   line-height: 2;
-  color: #ffffff;
-  background-color: #395ea3c7;
+  color: $beige;
+  background-color: $brown;
   padding: 0;
   margin: 0;
 }
@@ -64,15 +26,14 @@
 .card {
   position: relative;
   list-style: none;
-  width: 300px;
-  height: 240px;
+  width: 150px;
+  height: 180px;
   border-radius: 10px;
   overflow: hidden;
   margin: 30px 10px 30px;
-  background-color: #ffffff;
   box-shadow:
-    1px 0px 3px 1px #395ea348,
-    0px -1px 3px 1px #395ea348;
+    1px 0px 3px 1px $brownShadow,
+    0px -1px 3px 1px $brownShadow;
 
   figure {
     padding: 0;
@@ -86,16 +47,19 @@
   }
 
   figcaption {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
     position: absolute;
-    height: 80px;
-    background-color: #ffffff;
+    height: 60px;
+    background-color: $brownOpacity;
     bottom: 0;
     left: 0;
     right: 0;
-    font-size: 1.2em;
-    font-weight: 400;
+    font-size: .7em;
+    font-weight: 700;
     text-align: center;
-    letter-spacing: -1px;
     line-height: 1.5;
     padding: 10px 7px;
     width: 100%;
@@ -111,7 +75,7 @@
 
       a {
         text-decoration: none;
-        color: #181818;
+        color: $beige;
 
         &:hover {
           text-decoration: underline;

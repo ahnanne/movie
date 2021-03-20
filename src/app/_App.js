@@ -2,11 +2,13 @@ import { useState, useEffect } from 'react';
 import { ReactComponent as Atom } from '../assets/Atom.svg';
 import styles from './App.module.scss';
 
+const { REACT_APP_NEWS_KEY: API_KEY } = process.env;
+
 /* -------------------------------------------------------------------------- */
 
 function App() {
   // API로부터 비동기 요청으로 응답 받을 데이터를 보관할 상태
-  const [movieData, setMovieData] = useState([]);
+  const [news, setNews] = useState([]);
   // 에러 상태
   const [hasError, setHasError] = useState(null);
   // 로딩 상태 관리
@@ -18,12 +20,12 @@ function App() {
     () => {
       // 비동기 요청
       fetch(
-        `https://yts.mx/api/v2/list_movies.json?sort`
+        `https://newsapi.org/v2/top-headlines?country=kr&category=technology&apiKey=${API_KEY}`
       )
       .then(response => response.json()) // resolved
       .then(res => {
-        console.log(res.data.movies);
-        setMovieData(res.data.movies);
+        console.log(res);
+        setNews(res.articles);
         setIsLoading(false);
       }) // 필요한 데이터만 디스트럭처링 할당으로 뽑아내어 처리하기
       .catch(
@@ -49,25 +51,22 @@ function App() {
   // 정상적으로 요청이 처리되어 응답이 온 경우 렌더링
   return (
     <div className="App">
-      <h1 className={styles['h1']}>영화관</h1>
+      <h1 className={styles['h1']}>Economic News</h1>
       <div className="newsArea" lang="ko">
         <ul className={styles['container']}>
-          {
-            movieData.map(item => {
+          { // to render list, use map()
+            // each child in list MUST have their own unique key
+            news.map(item => {
               return (
                 <li key={item.url} className={styles['card']}>
                   <figure>
-                    <img src={item.medium_cover_image} alt="" />
+                    <img src={item.urlToImage} alt="" />
                     <figcaption>
-                      <span>
-                        <a href={item.url} target="_blank" rel="noopener noreferrer">
-                          {item.title}
-                        </a>
-                      </span>
+                      <span><a href={item.url}>{item.title}</a></span>
                     </figcaption>
                   </figure>
                 </li>
-              );
+              )
             })
           }
         </ul>

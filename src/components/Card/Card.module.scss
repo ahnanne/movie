@@ -1,0 +1,65 @@
+$brown: #815854;
+$beige: #F9EBDE;
+$brownShadow: #8158544f;
+$brownOpacity: #815854b4;
+
+.card {
+  position: relative;
+  list-style: none;
+  width: 150px;
+  height: 180px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 30px 10px 30px;
+  box-shadow:
+    4px 3px 0 $brownShadow;
+
+  figure {
+    padding: 0;
+    margin: 0;
+  }
+
+  img {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  figcaption {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    position: absolute;
+    height: 60px;
+    background-color: $brownOpacity;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: .7em;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.5;
+    padding: 10px 7px;
+    width: 100%;
+
+    span {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      white-space: normal;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      word-wrap: break-word;
+
+      a {
+        text-decoration: none;
+        color: $beige;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

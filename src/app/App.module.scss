@@ -3,6 +3,10 @@ $beige: #F9EBDE;
 $brownShadow: #8158544f;
 $brownOpacity: #815854b4;
 
+.App {
+  min-width: 470px;
+}
+
 .h1 {
   font-size: 2.4em;
   font-weight: 700;
@@ -15,72 +19,53 @@ $brownOpacity: #815854b4;
   margin: 0;
 }
 
+.searchContainer {
+  background-color: $brownShadow;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+
+  form {
+    min-width: 470px;
+  }
+}
+
+.search {
+  width: 400px;
+  height: 54px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1.4em;
+  color: $brown;
+  text-shadow: 2px 2px 4px $brownShadow;
+  letter-spacing: -1px;
+}
+
+.searchBtn {
+  display: inline-block;
+  margin-left: 14px;
+  vertical-align: middle;
+  width: 50px;
+  height: 42px;
+  background-color: $brownOpacity;
+  border: none;
+  border-radius: 15px;
+
+  svg {
+    color: $beige;
+    font-size: 2em;
+    pointer-events: none;
+  }
+}
+
 .container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
   padding-left: 0;
-}
-
-.card {
-  position: relative;
-  list-style: none;
-  width: 150px;
-  height: 180px;
-  border-radius: 10px;
-  overflow: hidden;
-  margin: 30px 10px 30px;
-  box-shadow:
-    1px 0px 3px 1px $brownShadow,
-    0px -1px 3px 1px $brownShadow;
-
-  figure {
-    padding: 0;
-    margin: 0;
-  }
-
-  img {
-    width: 100%;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-  }
-
-  figcaption {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: space-evenly;
-    position: absolute;
-    height: 60px;
-    background-color: $brownOpacity;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    font-size: .7em;
-    font-weight: 700;
-    text-align: center;
-    line-height: 1.5;
-    padding: 10px 7px;
-    width: 100%;
-
-    span {
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 2;
-      white-space: normal;
-      text-overflow: ellipsis;
-      overflow: hidden;
-      word-wrap: break-word;
-
-      a {
-        text-decoration: none;
-        color: $beige;
-
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-    }
-  }
 }

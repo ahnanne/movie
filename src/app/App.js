@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ReactComponent as Atom } from '../assets/Atom.svg';
+import styles from './App.module.scss';
 
 const { REACT_APP_NEWS_KEY: API_KEY } = process.env;
 
@@ -50,16 +51,20 @@ function App() {
   // 정상적으로 요청이 처리되어 응답이 온 경우 렌더링
   return (
     <div className="App">
-      <h1>World Wide News Headlines</h1>
+      <h1 className={styles['h1']}>Economic News</h1>
       <div className="newsArea" lang="ko">
-        <ul>
+        <ul className={styles['container']}>
           { // to render list, use map()
             // each child in list MUST have their own unique key
             news.map(item => {
               return (
-                <li key={item.url}>
-                  {/* {JSON.stringify(item, null, 2)} */}
-                  <img src={item.urlToImage} alt="" />
+                <li key={item.url} className={styles['card']}>
+                  <figure>
+                    <img src={item.urlToImage} alt="" />
+                    <figcaption>
+                      <span><a href={item.url}>{item.title}</a></span>
+                    </figcaption>
+                  </figure>
                 </li>
               )
             })

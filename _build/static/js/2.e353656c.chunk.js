@@ -1,0 +1,2 @@
+(this.webpackJsonp02__hooks=this.webpackJsonp02__hooks||[]).push([[2],{23:function(e,t,c){"use strict";c.r(t),c.d(t,"default",(function(){return i}));var n=c(1);function i(){return Object(n.jsxs)("div",{className:"practice",children:[Object(n.jsxs)("form",{children:[Object(n.jsx)("label",{htmlFor:"email",children:"\uc774\uba54\uc77c"}),Object(n.jsx)("input",{id:"email",type:"email",onChange:function(e){}})]}),Object(n.jsx)("p",{children:"\uc774\uba54\uc77c\uc744 \uc785\ub825\ud574\uc8fc\uc138\uc694."})]})}}}]);
+//# sourceMappingURL=2.e353656c.chunk.js.map

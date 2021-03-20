@@ -1,0 +1,25 @@
+body {
+  @include font(size rem(16) family 'Spoqa Han Sans Neo' lh 1.5);
+  color: #0584a6;
+}
+
+#{headings(1, 4)} {
+  @include m(b 0);
+  @include font(weight normal);
+}
+
+h1 {
+  @include font(size rem(48) weight 100);
+}
+
+h2 {
+  @include font(size rem(36) weight 100);
+}
+
+h3 {
+  @include font(size rem(30) weight 300);
+}
+
+h4 {
+  @include font(size rem(24) weight 500);
+}

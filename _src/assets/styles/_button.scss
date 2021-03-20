@@ -1,0 +1,9 @@
+.button {
+  &--back {
+    @include absolute(z 1000 t 12 l 20);
+    @include font(size rem(30) lh 1);
+    @include p(10);
+    text-decoration: none;
+    color: get-color(white);
+  }
+}

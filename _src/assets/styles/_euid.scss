@@ -1,0 +1,30 @@
+@import '~@euid/scss-mixins';
+
+$colors: map-merge(
+  $colors,
+  (
+    red: #d52637,
+    darkblue: #070c1d,
+    cyan: #00c3ff,
+    state-selection-bg: #00d9ff,
+    state-selection-fg: #071924,
+  )
+);
+
+@mixin size($value) {
+  width: $value;
+  height: $value;
+}
+
+@mixin container($limit: 960) {
+  max-width: rem($limit);
+  @include mx(auto);
+}
+
+@function headings($begin: 1, $end: 6) {
+  $headings: '';
+  @for $index from $begin through $end {
+    $headings: $headings + 'h#{$index}' + if($index != $end, ',', '');
+  }
+  @return $headings;
+}

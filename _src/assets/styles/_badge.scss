@@ -1,4 +1,0 @@
-.badge {
-  @include fixed(t rem(20) r rem(20) z 1000);
-  @include focus-visible(get-color(state-focus));
-}

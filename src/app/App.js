@@ -70,7 +70,7 @@ function App() {
   // 정상적으로 요청이 처리되어 응답이 온 경우 렌더링
   return (
     <div className={styles['App']}>
-      <Header link="/">MY영화관</Header>
+      <Header link="https://ahnanne.github.io/movie/">MY영화관</Header>
       <SearchForm>
         <SearchForm.Input
           id="searchMovie"

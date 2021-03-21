@@ -12,11 +12,9 @@ export default function Card({ data }) {
             <figure>
               <img src={item.medium_cover_image} alt="" />
               <figcaption>
-                <span>
-                  <a href={item.url} target="_blank" rel="noopener noreferrer">
+                <span><a href={item.url} target="_blank" rel="noopener noreferrer">
                     {item.title}
-                  </a>
-                </span>
+                  </a></span>
               </figcaption>
             </figure>
           </li>

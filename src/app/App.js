@@ -4,6 +4,8 @@ import styles from './App.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import Card from 'components/Card/Card';
+import Header from 'Container/Header/Header';
+import SearchForm from 'Container/SearchForm/SearchForm';
 
 const initUrl = 'https://yts.mx/api/v2/list_movies.json?limit=50&query_term=';
 
@@ -68,34 +70,20 @@ function App() {
   // 정상적으로 요청이 처리되어 응답이 온 경우 렌더링
   return (
     <div className={styles['App']}>
-      <h1 className={styles['h1']}><a href="/">MY영화관</a></h1>
-      <div className={styles['searchContainer']}>
-        <div className="search-form">
-        {/* <form> */}
-        {/* <form action={movieUrl} method="get" className="search-form"> */}
-          <input
-            type="text"
-            name="searchMovie"
-            value={keyword}
-            id="searchMovie"
-            className={styles['search']}
-            placeholder="어떤 영화가 보고싶으세요?"
-            onChange={handleKeyword}
-            onKeyUp={handleSearch}
-          />
-          <button
-            className={styles['searchBtn']}
-            // type="submit"
-            type="button"
-            onClick={handleSearch}
-          >
-            <FontAwesomeIcon icon={faSearch} />
-          </button>
-        </div>
-        {/* </form> */}
-      </div>
+      <Header link="/">MY영화관</Header>
+      <SearchForm>
+        <SearchForm.Input
+          id="searchMovie"
+          value={keyword}
+          onChange={handleKeyword}
+          onKeyUp={handleSearch}
+        />
+        <SearchForm.Button
+          onClick={handleSearch}
+        />
+      </SearchForm>
 
-      <div className="newsArea" lang="ko">
+      <div className="movieArea" lang="ko">
         <ul className={styles['container']}>
           <Card data={movieData} />
         </ul>

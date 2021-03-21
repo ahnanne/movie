@@ -1,0 +1,26 @@
+$brown: #815854;
+$beige: #F9EBDE;
+$brownShadow: #8158544f;
+$brownOpacity: #815854b4;
+$pinkBeige: #eba3b5;
+
+.h1 {
+  font-size: 2.4em;
+  font-weight: 700;
+  text-align: center;
+  font-style: italic;
+  line-height: 2;
+  background-color: $brown;
+  padding: 0;
+  margin: 0;
+
+  a {
+    text-decoration: none;
+    color: $beige;
+    transition: color 500ms linear;
+  }
+
+  a:hover {
+    color: $pinkBeige;
+  }
+}
